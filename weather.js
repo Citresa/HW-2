@@ -41,7 +41,7 @@ let handlePosition = function(info) {
   //console.info(info)
   latitude = info.coords.latitude.toFixed(4);
   longitude = info.coords.longitude.toFixed(4);
-  console.debug('lat: ' + latitude + ' long: ' + longitude)
+  //console.debug('lat: ' + latitude + ' long: ' + longitude)
 }
 
 let getWeather = function() {
@@ -50,6 +50,7 @@ let getWeather = function() {
   openweathermap_api_url += '&lon=' + longitude
   openweathermap_api_url +='&appid=4ce6f502d38ddae567bf1702b05e168c&units=imperial'
   fetch(openweathermap_api_url).then(convertToJSON).then(updateWeather).catch(displayError);
+  console.debug ('latitude: ' + latitude + ' longitude: ' + longitude)
 }
 
 let link = document.getElementById("get_forecast")
